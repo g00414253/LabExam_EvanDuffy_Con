@@ -13,22 +13,22 @@ public class EmployeeController {
     }
 
     @PostMapping("/addEmployee")
-    public List<Employee> newEmployee(@Valid @RequestBody Employee employee){
+    public List<Employee> addEmployee(@Valid @RequestBody Employee employee){
         return myEmployee.addEmployee(employee);
     }
 
     @GetMapping("/getEmployee/{employeeCode}")
-    public List<Employee> getEmployee(@PathVariable String employeeCode){
+    public List<Employee> getEmployee(@PathVariable @RequestBody String employeeCode){
         return myEmployee.getEmployee(employeeCode);
     }
 
     @DeleteMapping("/deleteEmployee/{employeeCode}")
-    public List<Employee> deleteEmployee(@PathVariable String employeeCode){
+    public List<Employee> deleteEmployee(@PathVariable @RequestBody String employeeCode){
         return myEmployee.deleteEmployee(employeeCode);
     }
 
     @PutMapping("/updateEmployee/{employeeCode}")
-    public List<Employee> updateEmployee(@PathVariable String employeeCode){
+    public List<Employee> updateEmployee(@PathVariable @RequestBody String employeeCode){
         return myEmployee.updateEmployee(employeeCode);
     }
 }
